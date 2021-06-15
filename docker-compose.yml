@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  postgres:
+    image: postgres:9.5
+    container_name: postgres
+    environment:
+      - POSTGRES_DB=ruler
+      - POSTGRES_USER=wlanuser
+      - POSTGRES_PASSWORD=wlan2030
+    ports:
+      - "5432:5432"
