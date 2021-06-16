@@ -1,5 +1,17 @@
-import styles from '../styles/Home.module.css';
+import styled from '@emotion/styled';
 
-export default function Home() {
-  return <div className={styles.container}>Welcome to Next.js!</div>;
+function Home() {
+  return <HomeStyled>Welcome to Next.js!</HomeStyled>;
 }
+
+const HomeStyled = styled.div`
+  min-height: 100vh;
+  padding: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+`;
+
+export default Home;
