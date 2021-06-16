@@ -1,13 +1,12 @@
-import useSWR from 'swr';
-import { getUsers } from '../lib/api';
+import useUsers from '../lib/useUsers';
 
 function Users() {
-  const { data, error } = useSWR('/users', getUsers);
+  const { users, isLoading, isError } = useUsers();
 
-  if (error) return <div>failed to load</div>;
-  if (!data) return <div>loading...</div>;
+  if (isLoading) return <div>loading...</div>;
+  if (isError) return <div>failed to load</div>;
 
-  return <div>{JSON.stringify(data)}</div>;
+  return <div>{JSON.stringify(users)}</div>;
 }
 
 export default Users;
