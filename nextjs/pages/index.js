@@ -1,7 +1,10 @@
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'next-i18next';
 import styled from '@emotion/styled';
 
 function Home() {
-  return <HomeStyled>Welcome to Next.js!</HomeStyled>;
+  const { t } = useTranslation('common');
+  return <HomeStyled>{t('Welcome to Next.js!')}</HomeStyled>;
 }
 
 const HomeStyled = styled.div`
@@ -14,5 +17,13 @@ const HomeStyled = styled.div`
   height: 100vh;
   color: ${(props) => props.theme.colors.primary};
 `;
+
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common'])),
+    },
+  };
+}
 
 export default Home;
