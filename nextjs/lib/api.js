@@ -1,7 +1,12 @@
+import { request } from 'graphql-request';
+import * as gql from './gql';
+
 const API_URL = process.env.STRAPI_URL || 'http://localhost:1337';
 
-const fetcher = (url) => fetch(API_URL + url).then((res) => res.json());
+function fetcher(query) {
+  return request(`${API_URL}/graphql`, query);
+}
 
 export async function getUsers() {
-  return fetcher('/users');
+  return fetcher(gql.GET_USERS);
 }
