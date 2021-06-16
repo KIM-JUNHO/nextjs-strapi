@@ -1,14 +1,13 @@
+import useSWR from 'swr';
 import { getUsers } from '../lib/api';
 
-function Users({ users }) {
-  return <div>{JSON.stringify(users)}</div>;
-}
+function Users() {
+  const { data, error } = useSWR('/users', getUsers);
 
-export async function getServerSideProps() {
-  const users = await getUsers();
-  return {
-    props: { users },
-  };
+  if (error) return <div>failed to load</div>;
+  if (!data) return <div>loading...</div>;
+
+  return <div>{JSON.stringify(data)}</div>;
 }
 
 export default Users;
