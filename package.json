@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "nextjs": "yarn --cwd nextjs",
     "strapi": "yarn --cwd strapi"
   },
   "license": "MIT"
