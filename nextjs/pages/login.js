@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { login } from '../requests/userApi';
+import Router from 'next/router';
 
 function Login() {
   const [username, setUsername] = useState('');
@@ -8,7 +9,7 @@ function Login() {
   const onLoginSubmit = async (e) => {
     e.preventDefault();
     const res = await login({ username, password });
-    console.log(res);
+    Router.push('/profile');
   };
 
   return (
