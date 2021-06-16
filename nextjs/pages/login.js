@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { login } from '../requests/userApi';
 import Router from 'next/router';
 import useUser from '../data/useUser';
+import { setCookie } from 'nookies';
 
 function Login() {
   const { mutateUser } = useUser();
@@ -10,7 +11,11 @@ function Login() {
 
   const onLoginSubmit = async (e) => {
     e.preventDefault();
-    await login({ username, password });
+    const res = await login({ username, password });
+    await setCookie(null, 'jwt', res.jwt, {
+      maxAge: 30 * 24 * 60 * 60,
+      path: '/',
+    });
     await mutateUser();
     Router.push('/profile');
   };
