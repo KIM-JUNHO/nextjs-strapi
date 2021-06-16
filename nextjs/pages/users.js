@@ -1,9 +1,11 @@
+import { getUsers } from '../lib/api';
+
 function Users({ users }) {
   return <div>{JSON.stringify(users)}</div>;
 }
 
 export async function getServerSideProps() {
-  const users = await fetch('http://localhost:1337/users').then((res) => res.json());
+  const users = await getUsers();
   return {
     props: { users },
   };
