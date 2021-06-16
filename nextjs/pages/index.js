@@ -1,10 +1,20 @@
+import { NextSeo } from 'next-seo';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 import styled from '@emotion/styled';
 
 function Home() {
+  const SEO = {
+    title: 'RULER | Home',
+    description: 'This is a Home Page',
+  };
   const { t } = useTranslation('common');
-  return <HomeStyled>{t('Welcome to Next.js!')}</HomeStyled>;
+  return (
+    <HomeStyled>
+      <NextSeo {...SEO} />
+      {t('Welcome to Next.js!')}
+    </HomeStyled>
+  );
 }
 
 const HomeStyled = styled.div`
