@@ -12,6 +12,7 @@ const HomeStyled = styled.div`
   justify-content: center;
   align-items: center;
   height: 100vh;
+  color: ${(props) => props.theme.colors.primary};
 `;
 
 export default Home;
