@@ -1,14 +1,17 @@
 import { useState } from 'react';
 import { login } from '../requests/userApi';
 import Router from 'next/router';
+import useUser from '../data/useUser';
 
 function Login() {
+  const { mutateUser } = useUser();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
   const onLoginSubmit = async (e) => {
     e.preventDefault();
-    const res = await login({ username, password });
+    await login({ username, password });
+    await mutateUser();
     Router.push('/profile');
   };
 
