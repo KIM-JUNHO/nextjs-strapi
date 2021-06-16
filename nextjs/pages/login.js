@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { login } from '../requests/userApi';
 
 function Login() {
   const [username, setUsername] = useState('');
@@ -6,6 +7,8 @@ function Login() {
 
   const onLoginSubmit = async (e) => {
     e.preventDefault();
+    const res = await login({ username, password });
+    console.log(res);
   };
 
   return (
