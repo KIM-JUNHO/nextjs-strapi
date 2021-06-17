@@ -23,6 +23,17 @@ export const ME = gql`
   }
 `;
 
+export const CREATE_RULE_REQUEST = gql`
+  mutation CreateRuleRequest($comment: String!) {
+    createRuleRequest(input: { data: { comment: $comment } }) {
+      ruleRequest {
+        id
+        comment
+      }
+    }
+  }
+`;
+
 export const GET_RULE_REQUESTS = gql`
   query GetRuleRequests {
     ruleRequests {
