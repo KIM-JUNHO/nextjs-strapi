@@ -22,3 +22,21 @@ export const ME = gql`
     }
   }
 `;
+
+export const GET_RULE_REQUESTS = gql`
+  query GetRuleRequests {
+    ruleRequests {
+      id
+      comment
+    }
+  }
+`;
+
+export const GET_RULE_REQUEST = gql`
+  query GetRuleRequest($id: ID!) {
+    ruleRequest(id: $id) {
+      id
+      comment
+    }
+  }
+`;
