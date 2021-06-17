@@ -2,6 +2,7 @@ import { NextSeo } from 'next-seo';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 import styled from '@emotion/styled';
+import Layout from '../components/Layout';
 
 function Home() {
   const SEO = {
@@ -10,10 +11,12 @@ function Home() {
   };
   const { t } = useTranslation('common');
   return (
-    <HomeStyled>
-      <NextSeo {...SEO} />
-      {t('Welcome to Next.js!')}
-    </HomeStyled>
+    <Layout>
+      <HomeStyled>
+        <NextSeo {...SEO} />
+        {t('Welcome to Next.js!')}
+      </HomeStyled>
+    </Layout>
   );
 }
 
