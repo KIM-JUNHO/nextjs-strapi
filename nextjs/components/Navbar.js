@@ -19,16 +19,13 @@ const Navbar = () => {
   return (
     <div>
       <div>
-        <Link href="/requestRule">RequestRule</Link>
+        <Link href="/requests/create">create</Link>
+      </div>
+      <div>
+        <Link href="/requests">get</Link>
       </div>
       <div>
         <Link href="/profile">Profile</Link>
-      </div>
-      <div>
-        <Link href="/ruleRequests">RuleRequests</Link>
-      </div>
-      <div>
-        <Link href="/login">Login</Link>
       </div>
       <div>username : {user.username}</div>
       <button onClick={() => logout()}>Logout</button>
