@@ -1,8 +1,13 @@
 import Layout from '../../components/Layout';
 import { getRequests } from '../../requests/requestApi';
+import RequestsTable from '../../components/RequestsTable';
 
 function RequestsPage({ requests }) {
-  return <Layout>{JSON.stringify(requests)}</Layout>;
+  return (
+    <Layout>
+      <RequestsTable requests={requests} />
+    </Layout>
+  );
 }
 
 export async function getServerSideProps() {
