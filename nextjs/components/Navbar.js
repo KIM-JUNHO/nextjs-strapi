@@ -33,22 +33,22 @@ const Navbar = () => {
         <IconButton edge="start" color="inherit" aria-label="menu">
           <MenuIcon />
         </IconButton>
-        <Link href="/ ">
+        <Link href="/" passHref>
           <Typography variant="h6" style={{ marginRight: 25 }}>
             Home
           </Typography>
         </Link>
-        <Link href="/requests/create">
+        <Link href="/requests/create" passHref>
           <Typography variant="h6" style={{ marginRight: 25 }}>
             Create
           </Typography>
         </Link>
-        <Link href="/requests">
+        <Link href="/requests" passHref>
           <Typography variant="h6" style={{ marginRight: 25 }}>
             List
           </Typography>
         </Link>
-        <Link href="/profile">
+        <Link href="/profile" passHref>
           <Typography variant="h6" style={{ flexGrow: 1 }}>
             Profile
           </Typography>
