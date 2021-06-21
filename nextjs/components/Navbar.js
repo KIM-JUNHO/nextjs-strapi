@@ -3,6 +3,12 @@ import { useEffect } from 'react';
 import useUser from '../data/useUser';
 import Link from 'next/link';
 import { destroyCookie } from 'nookies';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
 
 const Navbar = () => {
   const { user, loading, error } = useUser();
@@ -22,22 +28,36 @@ const Navbar = () => {
   };
 
   return (
-    <div>
-      <div>
-        <Link href="/">Home</Link>
-      </div>
-      <div>
-        <Link href="/requests/create">Create</Link>
-      </div>
-      <div>
-        <Link href="/requests">List</Link>
-      </div>
-      <div>
-        <Link href="/profile">Profile</Link>
-      </div>
-      <div>username : {user.username}</div>
-      <button onClick={() => logout()}>Logout</button>
-    </div>
+    <AppBar position="static">
+      <Toolbar>
+        <IconButton edge="start" color="inherit" aria-label="menu">
+          <MenuIcon />
+        </IconButton>
+        <Link href="/ ">
+          <Typography variant="h6" style={{ marginRight: 25 }}>
+            Home
+          </Typography>
+        </Link>
+        <Link href="/requests/create">
+          <Typography variant="h6" style={{ marginRight: 25 }}>
+            Create
+          </Typography>
+        </Link>
+        <Link href="/requests">
+          <Typography variant="h6" style={{ marginRight: 25 }}>
+            List
+          </Typography>
+        </Link>
+        <Link href="/profile">
+          <Typography variant="h6" style={{ flexGrow: 1 }}>
+            Profile
+          </Typography>
+        </Link>
+        <Button color="inherit" onClick={() => logout()}>
+          Logout
+        </Button>
+      </Toolbar>
+    </AppBar>
   );
 };
 

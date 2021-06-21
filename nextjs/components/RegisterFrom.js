@@ -4,7 +4,6 @@ import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import { register } from '../requests/userApi';
 import { setCookie } from 'nookies';
-import useUser from '../data/useUser';
 import Router from 'next/router';
 
 const validationSchema = yup.object({
@@ -19,9 +18,9 @@ const validationSchema = yup.object({
 const RegisterForm = () => {
   const formik = useFormik({
     initialValues: {
-      username: 'root',
-      password: '!q1w2e3r4',
-      email: 'root@test.com',
+      username: '',
+      password: '',
+      email: '',
     },
     validationSchema: validationSchema,
     onSubmit: async (values) => {
