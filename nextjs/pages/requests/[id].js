@@ -1,11 +1,11 @@
 import Layout from '../../components/Layout';
 import { getRequest } from '../../requests/requestApi';
-import Request from '../../components/Request';
+import RequestTable from '../../components/RequestTable';
 
 function RequestPage({ request }) {
   return (
     <Layout>
-      <Request request={request} />
+      <RequestTable request={request} />
     </Layout>
   );
 }
