@@ -2,7 +2,7 @@ import { useFormik } from 'formik';
 import * as yup from 'yup';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
-import { login } from '../requests/userApi';
+import { register } from '../requests/userApi';
 import { setCookie } from 'nookies';
 import useUser from '../data/useUser';
 import Router from 'next/router';
@@ -13,18 +13,20 @@ const validationSchema = yup.object({
     .string('Enter your password')
     .min(8, 'Password should be of minimum 8 characters length')
     .required('Password is required'),
+  email: yup.string('Enter your email').email('Enter a valid email').required('Email is required'),
 });
 
-const LoginForm = () => {
+const RegisterForm = () => {
   const formik = useFormik({
     initialValues: {
       username: 'root',
       password: '!q1w2e3r4',
+      email: 'root@test.com',
     },
     validationSchema: validationSchema,
     onSubmit: async (values) => {
-      const { username, password } = values;
-      const res = await login({ username, password });
+      const { username, password, email } = values;
+      const res = await register({ username, password, email });
       await setCookie(null, 'jwt', res.jwt, {
         maxAge: 30 * 24 * 60 * 60,
         path: '/',
@@ -57,11 +59,21 @@ const LoginForm = () => {
         helperText={formik.touched.password && formik.errors.password}
         autoComplete="off"
       />
+      <TextField
+        fullWidth
+        id="email"
+        name="email"
+        label="Email"
+        value={formik.values.email}
+        onChange={formik.handleChange}
+        error={formik.touched.email && Boolean(formik.errors.email)}
+        helperText={formik.touched.email && formik.errors.email}
+      />
       <Button color="primary" variant="contained" fullWidth type="submit">
-        LOGIN
+        REGISTER
       </Button>
     </form>
   );
 };
 
-export default LoginForm;
+export default RegisterForm;
