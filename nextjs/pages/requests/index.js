@@ -1,7 +1,7 @@
 import Layout from '../../components/Layout';
 import { getRequests } from '../../requests/requestApi';
 
-function RuleRequests({ requests }) {
+function RequestsPage({ requests }) {
   return <Layout>{JSON.stringify(requests)}</Layout>;
 }
 
@@ -15,4 +15,4 @@ export async function getServerSideProps() {
   };
 }
 
-export default RuleRequests;
+export default RequestsPage;

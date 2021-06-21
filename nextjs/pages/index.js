@@ -4,7 +4,7 @@ import { useTranslation } from 'next-i18next';
 import styled from '@emotion/styled';
 import Layout from '../components/Layout';
 
-function Home() {
+function HomePage() {
   const SEO = {
     title: 'RULER | Home',
     description: 'This is a Home Page',
@@ -39,4 +39,4 @@ export async function getStaticProps({ locale }) {
   };
 }
 
-export default Home;
+export default HomePage;

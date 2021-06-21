@@ -1,8 +1,13 @@
 import Layout from '../../components/Layout';
 import { getRequest } from '../../requests/requestApi';
+import Request from '../../components/Request';
 
-function Request({ request }) {
-  return <Layout>{JSON.stringify(request)}</Layout>;
+function RequestPage({ request }) {
+  return (
+    <Layout>
+      <Request request={request} />
+    </Layout>
+  );
 }
 
 export async function getServerSideProps({ query }) {
@@ -16,4 +21,4 @@ export async function getServerSideProps({ query }) {
   };
 }
 
-export default Request;
+export default RequestPage;

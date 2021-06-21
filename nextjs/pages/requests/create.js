@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Layout from '../../components/Layout';
 import { createRequest } from '../../requests/requestApi';
 
-function CreateRequest() {
+function CreateRequestPage() {
   const [srcAddr, setSrcAddr] = useState('');
   const [dstAddr, setDstAddr] = useState('');
   const [dstPort, setDstPort] = useState('');
@@ -27,4 +27,4 @@ function CreateRequest() {
   );
 }
 
-export default CreateRequest;
+export default CreateRequestPage;

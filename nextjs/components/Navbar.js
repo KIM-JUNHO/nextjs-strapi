@@ -19,10 +19,13 @@ const Navbar = () => {
   return (
     <div>
       <div>
-        <Link href="/requests/create">create</Link>
+        <Link href="/">Home</Link>
       </div>
       <div>
-        <Link href="/requests">get</Link>
+        <Link href="/requests/create">Create</Link>
+      </div>
+      <div>
+        <Link href="/requests">List</Link>
       </div>
       <div>
         <Link href="/profile">Profile</Link>

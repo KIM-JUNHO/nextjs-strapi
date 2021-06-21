@@ -4,7 +4,7 @@ import Router from 'next/router';
 import useUser from '../data/useUser';
 import { setCookie } from 'nookies';
 
-function Login() {
+function LoginPage() {
   const { mutateUser } = useUser();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -29,4 +29,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default LoginPage;

@@ -1,7 +1,18 @@
 import Layout from '../components/Layout';
+import useUser from '../data/useUser';
+import User from '../components/User';
 
-function Profile() {
-  return <Layout>This is a Profile Page</Layout>;
+function ProfilePage() {
+  const { user, loading, error } = useUser();
+
+  if (loading) return 'loading...';
+  if (error) return 'redirecting...';
+
+  return (
+    <Layout>
+      <User user={user} />
+    </Layout>
+  );
 }
 
-export default Profile;
+export default ProfilePage;
