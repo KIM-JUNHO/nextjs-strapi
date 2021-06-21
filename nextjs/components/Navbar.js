@@ -5,16 +5,16 @@ import { logout } from '../requests/userApi';
 import Link from 'next/link';
 
 const Navbar = () => {
-  const { user, loading, loggedOut } = useUser();
+  const { user, loading, error } = useUser();
 
   useEffect(() => {
-    if (loggedOut) {
+    if (error) {
       Router.replace('/login');
     }
-  }, [loggedOut]);
+  }, [error]);
 
   if (loading) return 'loading...';
-  if (loggedOut) return 'redirecting...';
+  if (error) return 'redirecting...';
 
   return (
     <div>
