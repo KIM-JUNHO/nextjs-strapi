@@ -6,7 +6,7 @@ function LoginPage() {
   return (
     <>
       <LoginForm />
-      <Link href="/register">
+      <Link href="/register" passHref>
         <Button color="primary" fullWidth>
           Register
         </Button>
