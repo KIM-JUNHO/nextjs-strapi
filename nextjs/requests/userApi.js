@@ -1,5 +1,4 @@
-import Router from 'next/router';
-import { destroyCookie, parseCookies } from 'nookies';
+import { parseCookies } from 'nookies';
 
 export async function login({ username, password }) {
   const req = await fetch(`http://localhost:1337/auth/local`, {
@@ -27,11 +26,6 @@ export async function register({ username, password, email }) {
 
   const res = await req.json();
   return res;
-}
-
-export function logout() {
-  destroyCookie(null, 'jwt');
-  Router.push('/login');
 }
 
 export async function me() {
