@@ -1,35 +1,17 @@
-import { useState } from 'react';
-import { login } from '../requests/userApi';
-import Router from 'next/router';
-import useUser from '../data/useUser';
-import { setCookie } from 'nookies';
 import Link from 'next/link';
+import { Button } from '@material-ui/core';
+import LoginForm from '../components/LoginForm';
 
 function LoginPage() {
-  const { mutateUser } = useUser();
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-
-  const onLoginSubmit = async (e) => {
-    e.preventDefault();
-    const res = await login({ username, password });
-    await setCookie(null, 'jwt', res.jwt, {
-      maxAge: 30 * 24 * 60 * 60,
-      path: '/',
-    });
-    await mutateUser();
-    Router.push('/profile');
-  };
-
   return (
-    <form onSubmit={onLoginSubmit}>
-      <input type="text" onChange={(e) => setUsername(e.target.value)} value={username} />
-      <input type="password" onChange={(e) => setPassword(e.target.value)} value={password} />
-      <button type="submit">Login</button>
+    <>
+      <LoginForm />
       <Link href="/register">
-        <a>Register</a>
+        <Button color="primary" fullWidth>
+          Register
+        </Button>
       </Link>
-    </form>
+    </>
   );
 }
 
