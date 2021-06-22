@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "rules",
+  "info": {
+    "name": "Rules"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "srcAddr": {
+      "type": "string"
+    },
+    "dstAddr": {
+      "type": "string"
+    },
+    "dstPort": {
+      "type": "string"
+    },
+    "comment": {
+      "type": "string"
+    }
+  }
+}
