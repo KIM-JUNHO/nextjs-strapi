@@ -1,8 +1,13 @@
 import Layout from '../../components/Layout';
 import { getApprovals } from '../../api/approvalApi';
+import ApprovalsTable from '../../components/ApprovalsTable';
 
 function ApprovalsPage({ approvals }) {
-  return <Layout>{JSON.stringify(approvals)}</Layout>;
+  return (
+    <Layout>
+      <ApprovalsTable approvals={approvals} />
+    </Layout>
+  );
 }
 
 export async function getServerSideProps() {

@@ -1,8 +1,13 @@
 import Layout from '../../components/Layout';
 import { getRules } from '../../api/ruleApi';
+import RulesTable from '../../components/RulesTable';
 
 function RulesPage({ rules }) {
-  return <Layout>{JSON.stringify(rules)}</Layout>;
+  return (
+    <Layout>
+      <RulesTable rules={rules} />
+    </Layout>
+  );
 }
 
 export async function getServerSideProps() {
