@@ -21,17 +21,17 @@ export default function RequestsTable({ requests }) {
           </TableRow>
         </TableHead>
         <TableBody>
-          {requests.map((row) => (
-            <TableRow key={row.id}>
+          {requests.map(({ id, created_at, user: { username }, expireDate, comment }) => (
+            <TableRow key={id}>
               <TableCell component="th" scope="row">
-                <Link href="/requests/[id]" as={`/requests/${row.id}`}>
-                  <a>{row.id}</a>
+                <Link href="/requests/[id]" as={`/requests/${id}`}>
+                  <a>{id}</a>
                 </Link>
               </TableCell>
-              <TableCell>{row.created_at}</TableCell>
-              <TableCell>{row.user.username}</TableCell>
-              <TableCell>{row.expireDate}</TableCell>
-              <TableCell>{row.comment}</TableCell>
+              <TableCell>{created_at}</TableCell>
+              <TableCell>{user.username}</TableCell>
+              <TableCell>{expireDate}</TableCell>
+              <TableCell>{comment}</TableCell>
             </TableRow>
           ))}
         </TableBody>

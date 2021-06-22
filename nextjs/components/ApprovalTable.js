@@ -5,9 +5,17 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import Link from 'next/link';
 
-export default function ApprovalsTable({ approvals }) {
+export default function ApprovalTable({
+  approval: {
+    id,
+    type,
+    status,
+    user: { username },
+    created_at,
+    updated_at,
+  },
+}) {
   return (
     <TableContainer component={Paper}>
       <Table>
@@ -22,20 +30,16 @@ export default function ApprovalsTable({ approvals }) {
           </TableRow>
         </TableHead>
         <TableBody>
-          {approvals.map(({ id, type, status, user: { username }, created_at, updated_at }) => (
-            <TableRow key={id}>
-              <TableCell component="th" scope="row">
-                <Link href="/approvals/[id]" as={`/approvals/${id}`}>
-                  <a>{id}</a>
-                </Link>
-              </TableCell>
-              <TableCell>{type}</TableCell>
-              <TableCell>{status}</TableCell>
-              <TableCell>{username}</TableCell>
-              <TableCell>{created_at}</TableCell>
-              <TableCell>{updated_at}</TableCell>
-            </TableRow>
-          ))}
+          <TableRow key={id}>
+            <TableCell component="th" scope="row">
+              {id}
+            </TableCell>
+            <TableCell>{type}</TableCell>
+            <TableCell>{status}</TableCell>
+            <TableCell>{username}</TableCell>
+            <TableCell>{created_at}</TableCell>
+            <TableCell>{updated_at}</TableCell>
+          </TableRow>
         </TableBody>
       </Table>
     </TableContainer>

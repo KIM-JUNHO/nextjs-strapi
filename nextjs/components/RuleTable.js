@@ -5,9 +5,10 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import Link from 'next/link';
 
-export default function RulesTable({ rules }) {
+export default function RuleTable({
+  rule: { id, srcAddr, dstAddr, dstPort, comment, created_at },
+}) {
   return (
     <TableContainer component={Paper}>
       <Table>
@@ -22,20 +23,16 @@ export default function RulesTable({ rules }) {
           </TableRow>
         </TableHead>
         <TableBody>
-          {rules.map(({ id, srcAddr, dstAddr, dstPort, comment, created_at }) => (
-            <TableRow key={id}>
-              <TableCell component="th" scope="row">
-                <Link href="/rules/[id]" as={`/rules/${id}`}>
-                  <a>{id}</a>
-                </Link>
-              </TableCell>
-              <TableCell>{srcAddr}</TableCell>
-              <TableCell>{dstAddr}</TableCell>
-              <TableCell>{dstPort}</TableCell>
-              <TableCell>{comment}</TableCell>
-              <TableCell>{created_at}</TableCell>
-            </TableRow>
-          ))}
+          <TableRow key={id}>
+            <TableCell component="th" scope="row">
+              <a>{id}</a>
+            </TableCell>
+            <TableCell>{srcAddr}</TableCell>
+            <TableCell>{dstAddr}</TableCell>
+            <TableCell>{dstPort}</TableCell>
+            <TableCell>{comment}</TableCell>
+            <TableCell>{created_at}</TableCell>
+          </TableRow>
         </TableBody>
       </Table>
     </TableContainer>
