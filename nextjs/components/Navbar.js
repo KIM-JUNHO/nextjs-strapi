@@ -3,12 +3,11 @@ import { useEffect } from 'react';
 import useUser from '../data/useUser';
 import Link from 'next/link';
 import { destroyCookie } from 'nookies';
-import AppBar from '@material-ui/core/AppBar';
+// import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
+import MuiLink from '@material-ui/core/Link';
 
 const Navbar = () => {
   const { user, loading, error } = useUser();
@@ -30,11 +29,6 @@ const Navbar = () => {
   return (
     // <AppBar position="static">
     <Toolbar>
-      {/* <Link href="/" passHref>
-        <Typography variant="h4" style={{ marginRight: 25 }}>
-          RULER
-        </Typography>
-      </Link> */}
       <Link href="/requests" passHref>
         <Typography variant="h6" style={{ marginRight: 25 }}>
           Requests
@@ -46,14 +40,12 @@ const Navbar = () => {
         </Typography>
       </Link>
       <Link href="/approvals" passHref>
-        <Typography variant="h6" style={{ marginRight: 25 }}>
+        <Typography variant="h6" style={{ flexGrow: 1 }}>
           Approvals
         </Typography>
       </Link>
       <Link href="/profile" passHref>
-        <Typography variant="h6" style={{ flexGrow: 1 }}>
-          Profile
-        </Typography>
+        <MuiLink style={{ marginRight: 25 }}>{user.username}</MuiLink>
       </Link>
       <Button color="inherit" onClick={() => logout()}>
         Logout

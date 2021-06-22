@@ -2,7 +2,7 @@ import { useFormik } from 'formik';
 import * as yup from 'yup';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
-import { register } from '../requests/userApi';
+import { register } from '../api/userApi';
 import { setCookie } from 'nookies';
 import Router from 'next/router';
 

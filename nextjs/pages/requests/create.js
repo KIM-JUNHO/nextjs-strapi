@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Layout from '../../components/Layout';
-import { createRequest } from '../../requests/requestApi';
+import { createRequest } from '../../api/requestApi';
 
 function CreateRequestPage() {
   const [srcAddr, setSrcAddr] = useState('');

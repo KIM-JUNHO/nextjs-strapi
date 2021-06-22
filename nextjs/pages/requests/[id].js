@@ -1,5 +1,5 @@
 import Layout from '../../components/Layout';
-import { getRequest } from '../../requests/requestApi';
+import { getRequest } from '../../api/requestApi';
 import RequestTable from '../../components/RequestTable';
 
 function RequestPage({ request }) {
