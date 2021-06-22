@@ -29,7 +29,7 @@ export default function RequestsTable({ requests }) {
                 </Link>
               </TableCell>
               <TableCell>{created_at}</TableCell>
-              <TableCell>{user.username}</TableCell>
+              <TableCell>{username}</TableCell>
               <TableCell>{expireDate}</TableCell>
               <TableCell>{comment}</TableCell>
             </TableRow>
