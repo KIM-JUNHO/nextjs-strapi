@@ -22,20 +22,21 @@ export default function ApprovalsTable({ approvals }) {
           </TableRow>
         </TableHead>
         <TableBody>
-          {approvals.map(({ id, type, status, user: { username }, created_at, updated_at }) => (
-            <TableRow key={id}>
-              <TableCell component="th" scope="row">
-                <Link href="/approvals/[id]" as={`/approvals/${id}`}>
-                  <a>{id}</a>
-                </Link>
-              </TableCell>
-              <TableCell>{type}</TableCell>
-              <TableCell>{status}</TableCell>
-              <TableCell>{username}</TableCell>
-              <TableCell>{created_at}</TableCell>
-              <TableCell>{updated_at}</TableCell>
-            </TableRow>
-          ))}
+          {approvals.length > 0 &&
+            approvals.map(({ id, type, status, user: { username }, created_at, updated_at }) => (
+              <TableRow key={id}>
+                <TableCell component="th" scope="row">
+                  <Link href="/approvals/[id]" as={`/approvals/${id}`}>
+                    <a>{id}</a>
+                  </Link>
+                </TableCell>
+                <TableCell>{type}</TableCell>
+                <TableCell>{status}</TableCell>
+                <TableCell>{username}</TableCell>
+                <TableCell>{created_at}</TableCell>
+                <TableCell>{updated_at}</TableCell>
+              </TableRow>
+            ))}
         </TableBody>
       </Table>
     </TableContainer>

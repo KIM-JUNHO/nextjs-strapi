@@ -2,14 +2,14 @@ import useSWR from 'swr';
 import { me } from '../api/userApi';
 
 export default function useUser() {
-  const { data: user, mutate: mutateUser, error } = useSWR('/users/me', me);
+  const { data, mutate, error } = useSWR('/users/me', me);
 
-  const loading = !user && !error;
+  const loading = !data && !error;
 
   return {
     loading,
     error,
-    user,
-    mutateUser,
+    user: data,
+    mutateUser: mutate,
   };
 }
