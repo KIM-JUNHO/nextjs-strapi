@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "approvals",
+  "info": {
+    "name": "Approvals"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "type": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    }
+  }
+}
