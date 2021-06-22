@@ -1,23 +1,18 @@
 import Layout from '../../components/Layout';
-import { getApprovals } from '../../api/approvalApi';
 import ApprovalsTable from '../../components/ApprovalsTable';
+import useApprovals from '../../data/useApprovals';
 
-function ApprovalsPage({ approvals }) {
+function ApprovalsPage() {
+  const { approvals, loading, error } = useApprovals();
+
+  if (loading) return 'loading...';
+  if (error) return 'error...';
+
   return (
     <Layout>
       <ApprovalsTable approvals={approvals} />
     </Layout>
   );
-}
-
-export async function getServerSideProps() {
-  const approvals = await getApprovals();
-
-  return {
-    props: {
-      approvals,
-    },
-  };
 }
 
 export default ApprovalsPage;

@@ -1,10 +1,15 @@
 import Layout from '../../components/Layout';
-import { getRequests } from '../../api/requestApi';
 import RequestsTable from '../../components/RequestsTable';
 import Link from 'next/link';
 import Button from '@material-ui/core/Button';
+import useRequests from '../../data/useRequests';
 
-function RequestsPage({ requests }) {
+function RequestsPage() {
+  const { requests, loading, error } = useRequests();
+
+  if (loading) return 'loading...';
+  if (error) return 'error...';
+
   return (
     <Layout>
       <Link href="/requests/create" passHref>
@@ -13,16 +18,6 @@ function RequestsPage({ requests }) {
       <RequestsTable requests={requests} />
     </Layout>
   );
-}
-
-export async function getServerSideProps() {
-  const requests = await getRequests();
-
-  return {
-    props: {
-      requests,
-    },
-  };
 }
 
 export default RequestsPage;
