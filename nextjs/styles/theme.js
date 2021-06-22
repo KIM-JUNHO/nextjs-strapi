@@ -17,3 +17,9 @@ export const emotionLightTheme = {
     primary: 'DarkBlue',
   },
 };
+
+export const emotionDarkTheme = {
+  colors: {
+    primary: 'Gray',
+  },
+};
