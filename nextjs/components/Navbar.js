@@ -28,36 +28,38 @@ const Navbar = () => {
   };
 
   return (
-    <AppBar position="static">
-      <Toolbar>
-        <IconButton edge="start" color="inherit" aria-label="menu">
-          <MenuIcon />
-        </IconButton>
-        <Link href="/" passHref>
-          <Typography variant="h6" style={{ marginRight: 25 }}>
-            Home
-          </Typography>
-        </Link>
-        <Link href="/requests/create" passHref>
-          <Typography variant="h6" style={{ marginRight: 25 }}>
-            Create
-          </Typography>
-        </Link>
-        <Link href="/requests" passHref>
-          <Typography variant="h6" style={{ marginRight: 25 }}>
-            List
-          </Typography>
-        </Link>
-        <Link href="/profile" passHref>
-          <Typography variant="h6" style={{ flexGrow: 1 }}>
-            Profile
-          </Typography>
-        </Link>
-        <Button color="inherit" onClick={() => logout()}>
-          Logout
-        </Button>
-      </Toolbar>
-    </AppBar>
+    // <AppBar position="static">
+    <Toolbar>
+      {/* <Link href="/" passHref>
+        <Typography variant="h4" style={{ marginRight: 25 }}>
+          RULER
+        </Typography>
+      </Link> */}
+      <Link href="/requests" passHref>
+        <Typography variant="h6" style={{ marginRight: 25 }}>
+          Requests
+        </Typography>
+      </Link>
+      <Link href="/rules" passHref>
+        <Typography variant="h6" style={{ marginRight: 25 }}>
+          Rules
+        </Typography>
+      </Link>
+      <Link href="/approvals" passHref>
+        <Typography variant="h6" style={{ marginRight: 25 }}>
+          Approvals
+        </Typography>
+      </Link>
+      <Link href="/profile" passHref>
+        <Typography variant="h6" style={{ flexGrow: 1 }}>
+          Profile
+        </Typography>
+      </Link>
+      <Button color="inherit" onClick={() => logout()}>
+        Logout
+      </Button>
+    </Toolbar>
+    // </AppBar>
   );
 };
 
