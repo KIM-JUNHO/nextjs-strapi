@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "requests",
+  "info": {
+    "name": "Requests"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "expireDate": {
+      "type": "date"
+    },
+    "comment": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    }
+  }
+}
