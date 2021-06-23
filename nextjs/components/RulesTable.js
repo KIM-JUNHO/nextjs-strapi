@@ -1,15 +1,15 @@
+import { useState } from 'react';
 import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import Link from 'next/link';
-import useRules from '../data/useRules';
+import RulesTableBody from './RulesTableBody';
 
-export default function RulesTable({ pageSize, pageNum }) {
-  const { rules, loading, error } = useRules({ pageSize, pageNum });
+export default function RulesTable() {
+  const pageSize = 5;
+  const [pageNum, setPageNum] = useState(1);
 
   return (
     <TableContainer component={Paper}>
@@ -24,26 +24,10 @@ export default function RulesTable({ pageSize, pageNum }) {
             <TableCell>Created_At</TableCell>
           </TableRow>
         </TableHead>
-        <TableBody>
-          {loading && 'loading'}
-          {error && 'error'}
-          {rules.length > 0 &&
-            rules.map(({ id, srcAddr, dstAddr, dstPort, comment, created_at }) => (
-              <TableRow key={id}>
-                <TableCell component="th" scope="row">
-                  <Link href="/rules/[id]" as={`/rules/${id}`}>
-                    <a>{id}</a>
-                  </Link>
-                </TableCell>
-                <TableCell>{srcAddr}</TableCell>
-                <TableCell>{dstAddr}</TableCell>
-                <TableCell>{dstPort}</TableCell>
-                <TableCell>{comment}</TableCell>
-                <TableCell>{created_at}</TableCell>
-              </TableRow>
-            ))}
-        </TableBody>
+        <RulesTableBody pageSize={pageSize} pageNum={pageNum} />
       </Table>
+      <button onClick={() => setPageNum(pageNum - 1)}>Previous</button>
+      <button onClick={() => setPageNum(pageNum + 1)}>Next</button>
     </TableContainer>
   );
 }
