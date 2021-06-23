@@ -1,8 +1,8 @@
 import useSWR from 'swr';
-import { me } from '../api/userApi';
+import { fetchWithToken } from '../lib/fetch';
 
 export default function useUser() {
-  const { data, mutate, error } = useSWR('/users/me', me);
+  const { data, mutate, error } = useSWR(`http://localhost:1337/users/me`, fetchWithToken);
 
   const loading = !data && !error;
 

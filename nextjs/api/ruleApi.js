@@ -1,18 +1,5 @@
 import { parseCookies } from 'nookies';
 
-export async function getRules() {
-  const { jwt } = parseCookies();
-  const req = await fetch(`http://localhost:1337/rules`, {
-    method: 'GET',
-    headers: {
-      Accept: 'application/json',
-      Authorization: `Bearer ${jwt}`,
-    },
-  });
-  const res = await req.json();
-  return res;
-}
-
 export async function createRule({ rule }) {
   const { jwt } = parseCookies();
   const req = await fetch(`http://localhost:1337/rules`, {

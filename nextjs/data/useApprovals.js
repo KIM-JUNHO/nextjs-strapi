@@ -1,8 +1,8 @@
 import useSWR from 'swr';
-import { getApprovals } from '../api/approvalApi';
+import { fetchWithToken } from '../lib/fetch';
 
 export default function useApprovals() {
-  const { data, mutate, error } = useSWR('/approvals', getApprovals);
+  const { data, mutate, error } = useSWR(`http://localhost:1337/approvals`, fetchWithToken);
 
   const loading = !data && !error;
 

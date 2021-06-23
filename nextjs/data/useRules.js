@@ -1,8 +1,8 @@
 import useSWR from 'swr';
-import { getRules } from '../api/ruleApi';
+import { fetchWithToken } from '../lib/fetch';
 
 export default function useRules() {
-  const { data, mutate, error } = useSWR('/rules', getRules);
+  const { data, error, mutate } = useSWR(`http://localhost:1337/rules?_limit=5`, fetchWithToken);
 
   const loading = !data && !error;
 

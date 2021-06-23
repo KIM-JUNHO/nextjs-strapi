@@ -12,10 +12,10 @@ function RequestsPage() {
 
   return (
     <Layout>
+      <RequestsTable requests={requests} />
       <Link href="/requests/create" passHref>
         <Button style={{ float: 'right' }}>Create</Button>
       </Link>
-      <RequestsTable requests={requests} />
     </Layout>
   );
 }

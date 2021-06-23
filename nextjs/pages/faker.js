@@ -4,10 +4,10 @@ import { createRule } from '../api/ruleApi';
 function FakerPage() {
   const addRules = async () => {
     const rule = {
-      srcAddr: faker.lorem.text(),
-      dstAddr: faker.lorem.text(),
-      dstPort: faker.lorem.text(),
-      comment: faker.lorem.sentence(),
+      srcAddr: faker.random.alpha(),
+      dstAddr: faker.random.alpha(),
+      dstPort: faker.random.alpha(),
+      comment: faker.random.alpha(),
     };
 
     const rules = await createRule({ rule });
