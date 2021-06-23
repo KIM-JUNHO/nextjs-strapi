@@ -3,13 +3,20 @@ import Table from '@material-ui/core/Table';
 import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
+import TableBody from '@material-ui/core/TableBody';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import RulesTableBody from './RulesTableBody';
+import useRules from '../data/useRules';
+import Link from 'next/link';
 
 export default function RulesTable() {
   const pageSize = 5;
   const [pageNum, setPageNum] = useState(0);
+  const { rules, loading, error } = useRules({ pageSize, pageNum });
+  const {} = useRules({ pageSize, pageNum: pageNum + 1 });
+
+  if (loading) return 'loading...';
+  if (error) return 'error...';
 
   return (
     <TableContainer component={Paper}>
@@ -24,11 +31,24 @@ export default function RulesTable() {
             <TableCell>Created_At</TableCell>
           </TableRow>
         </TableHead>
-        <RulesTableBody pageSize={pageSize} pageNum={pageNum} />
+        <TableBody>
+          {rules.length > 0 &&
+            rules.map(({ id, srcAddr, dstAddr, dstPort, comment, created_at }) => (
+              <TableRow key={id}>
+                <TableCell component="th" scope="row">
+                  <Link href="/rules/[id]" as={`/rules/${id}`}>
+                    <a>{id}</a>
+                  </Link>
+                </TableCell>
+                <TableCell>{srcAddr}</TableCell>
+                <TableCell>{dstAddr}</TableCell>
+                <TableCell>{dstPort}</TableCell>
+                <TableCell>{comment}</TableCell>
+                <TableCell>{created_at}</TableCell>
+              </TableRow>
+            ))}
+        </TableBody>
       </Table>
-      <div style={{ display: 'none' }}>
-        <RulesTableBody pageSize={pageSize} pageNum={pageNum + 1} />
-      </div>
       <button onClick={() => setPageNum(pageNum - 1)}>Previous</button>
       <button onClick={() => setPageNum(pageNum + 1)}>Next</button>
     </TableContainer>
