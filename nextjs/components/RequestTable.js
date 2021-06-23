@@ -6,7 +6,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 
-export default function RequestTable({ request: { id, created_at, expireDate, comment } }) {
+export default function RequestTable({ request: { id, created_at, expireDate, comment, status } }) {
   return (
     <TableContainer component={Paper}>
       <Table>
@@ -16,6 +16,7 @@ export default function RequestTable({ request: { id, created_at, expireDate, co
             <TableCell>RequestDate</TableCell>
             <TableCell>ExpireDate</TableCell>
             <TableCell>Comment</TableCell>
+            <TableCell>Status</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -26,6 +27,7 @@ export default function RequestTable({ request: { id, created_at, expireDate, co
             <TableCell>{created_at}</TableCell>
             <TableCell>{expireDate}</TableCell>
             <TableCell>{comment}</TableCell>
+            <TableCell>{status}</TableCell>
           </TableRow>
         </TableBody>
       </Table>

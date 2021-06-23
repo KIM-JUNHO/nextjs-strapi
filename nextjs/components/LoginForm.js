@@ -5,6 +5,7 @@ import TextField from '@material-ui/core/TextField';
 import { login } from '../api/userApi';
 import { setCookie } from 'nookies';
 import Router from 'next/router';
+import useUser from '../data/useUser';
 
 const validationSchema = yup.object({
   username: yup.string('Enter your username').required('Username is required'),
@@ -15,6 +16,7 @@ const validationSchema = yup.object({
 });
 
 const LoginForm = () => {
+  const { mutateUser } = useUser();
   const formik = useFormik({
     initialValues: {
       username: 'root',
@@ -28,6 +30,7 @@ const LoginForm = () => {
         maxAge: 30 * 24 * 60 * 60,
         path: '/',
       });
+      await mutateUser();
       Router.push('/');
     },
   });
