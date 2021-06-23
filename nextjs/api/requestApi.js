@@ -16,12 +16,10 @@ export async function createRequest({ request }) {
 }
 
 export async function countRequests() {
-  const { jwt } = parseCookies();
   const req = await fetch(`http://localhost:1337/requests/count`, {
     method: 'GET',
     headers: {
       Accept: 'application/json',
-      Authorization: `Bearer ${jwt}`,
     },
   });
   const res = await req.json();
@@ -29,12 +27,10 @@ export async function countRequests() {
 }
 
 export async function getRequest({ id }) {
-  const { jwt } = parseCookies();
   const req = await fetch(`http://localhost:1337/requests/${id}`, {
     method: 'GET',
     headers: {
       Accept: 'application/json',
-      Authorization: `Bearer ${jwt}`,
     },
   });
   const res = await req.json();

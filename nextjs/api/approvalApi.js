@@ -16,12 +16,10 @@ export async function createApproval({ approval }) {
 }
 
 export async function countApprovals() {
-  const { jwt } = parseCookies();
   const req = await fetch(`http://localhost:1337/approvals/count`, {
     method: 'GET',
     headers: {
       Accept: 'application/json',
-      Authorization: `Bearer ${jwt}`,
     },
   });
   const res = await req.json();
@@ -29,12 +27,10 @@ export async function countApprovals() {
 }
 
 export async function getApproval({ id }) {
-  const { jwt } = parseCookies();
   const req = await fetch(`http://localhost:1337/approvals/${id}`, {
     method: 'GET',
     headers: {
       Accept: 'application/json',
-      Authorization: `Bearer ${jwt}`,
     },
   });
   const res = await req.json();

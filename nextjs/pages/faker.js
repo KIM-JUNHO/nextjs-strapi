@@ -10,8 +10,8 @@ function FakerPage() {
       status: faker.random.alpha(),
     };
 
-    const rules = await createApproval({ approval });
-    console.log(rules);
+    const res = await createApproval({ approval });
+    console.log(res);
   };
   const addRequest = async () => {
     const request = {
@@ -20,8 +20,8 @@ function FakerPage() {
       status: faker.random.alpha(),
     };
 
-    const rules = await createRequest({ request });
-    console.log(rules);
+    const res = await createRequest({ request });
+    console.log(res);
   };
   const addRule = async () => {
     const rule = {
@@ -31,8 +31,8 @@ function FakerPage() {
       comment: faker.random.alpha(),
     };
 
-    const rules = await createRule({ rule });
-    console.log(rules);
+    const res = await createRule({ rule });
+    console.log(res);
   };
   return (
     <>

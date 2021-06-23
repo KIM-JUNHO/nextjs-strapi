@@ -16,12 +16,10 @@ export async function createRule({ rule }) {
 }
 
 export async function countRules() {
-  const { jwt } = parseCookies();
   const req = await fetch(`http://localhost:1337/rules/count`, {
     method: 'GET',
     headers: {
       Accept: 'application/json',
-      Authorization: `Bearer ${jwt}`,
     },
   });
   const res = await req.json();
@@ -29,12 +27,10 @@ export async function countRules() {
 }
 
 export async function getRule({ id }) {
-  const { jwt } = parseCookies();
   const req = await fetch(`http://localhost:1337/rules/${id}`, {
     method: 'GET',
     headers: {
       Accept: 'application/json',
-      Authorization: `Bearer ${jwt}`,
     },
   });
   const res = await req.json();
