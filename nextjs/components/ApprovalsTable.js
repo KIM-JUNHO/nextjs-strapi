@@ -24,10 +24,10 @@ export default function ApprovalsTable() {
           </TableRow>
         </TableHead>
         <ApprovalsTableBody pageSize={pageSize} pageNum={pageNum} />
-        <div style={{ display: 'none' }}>
-          <ApprovalsTableBody pageSize={pageSize} pageNum={pageNum + 1} />
-        </div>
       </Table>
+      <div style={{ display: 'none' }}>
+        <ApprovalsTableBody pageSize={pageSize} pageNum={pageNum + 1} />
+      </div>
       <button onClick={() => setPageNum(pageNum - 1)}>Previous</button>
       <button onClick={() => setPageNum(pageNum + 1)}>Next</button>
     </TableContainer>

@@ -6,16 +6,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 
-export default function ApprovalTable({
-  approval: {
-    id,
-    type,
-    status,
-    user: { username },
-    created_at,
-    updated_at,
-  },
-}) {
+export default function ApprovalTable({ approval: { id, type, status, created_at, updated_at } }) {
   return (
     <TableContainer component={Paper}>
       <Table>
@@ -24,7 +15,6 @@ export default function ApprovalTable({
             <TableCell>#</TableCell>
             <TableCell>Type</TableCell>
             <TableCell>Status</TableCell>
-            <TableCell>User</TableCell>
             <TableCell>Created_At</TableCell>
             <TableCell>Updated_At</TableCell>
           </TableRow>
@@ -36,7 +26,6 @@ export default function ApprovalTable({
             </TableCell>
             <TableCell>{type}</TableCell>
             <TableCell>{status}</TableCell>
-            <TableCell>{username}</TableCell>
             <TableCell>{created_at}</TableCell>
             <TableCell>{updated_at}</TableCell>
           </TableRow>
