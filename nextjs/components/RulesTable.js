@@ -25,6 +25,9 @@ export default function RulesTable() {
           </TableRow>
         </TableHead>
         <RulesTableBody pageSize={pageSize} pageNum={pageNum} />
+        <div style={{ display: 'none' }}>
+          <RulesTableBody pageSize={pageSize} pageNum={pageNum + 1} />
+        </div>
       </Table>
       <button onClick={() => setPageNum(pageNum - 1)}>Previous</button>
       <button onClick={() => setPageNum(pageNum + 1)}>Next</button>
