@@ -1,14 +1,7 @@
 import { parseCookies } from 'nookies';
 
-export async function createApproval({ rule }) {
+export async function createApproval({ approval }) {
   const { jwt } = parseCookies();
-  const body = {
-    user: '2',
-    approver: '1',
-    expireDate: '2022-06-21',
-    comment: 'TEST5',
-    rules: [rule],
-  };
   const req = await fetch(`http://localhost:1337/approvals`, {
     method: 'POST',
     headers: {
@@ -16,7 +9,7 @@ export async function createApproval({ rule }) {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${jwt}`,
     },
-    body: JSON.stringify(body),
+    body: JSON.stringify(approval),
   });
   const res = await req.json();
   return res;
