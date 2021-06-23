@@ -15,13 +15,6 @@ export async function getRules() {
 
 export async function createRule({ rule }) {
   const { jwt } = parseCookies();
-  const body = {
-    user: '2',
-    approver: '1',
-    expireDate: '2022-06-21',
-    comment: 'TEST5',
-    rules: [rule],
-  };
   const req = await fetch(`http://localhost:1337/rules`, {
     method: 'POST',
     headers: {
@@ -29,7 +22,7 @@ export async function createRule({ rule }) {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${jwt}`,
     },
-    body: JSON.stringify(body),
+    body: JSON.stringify(rule),
   });
   const res = await req.json();
   return res;
