@@ -1,13 +1,16 @@
+import { useState } from 'react';
 import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import Link from 'next/link';
+import RequestsTableBody from './RequestsTableBody';
 
-export default function RequestsTable({ requests }) {
+export default function RequestsTable() {
+  const pageSize = 5;
+  const [pageNum, setPageNum] = useState(0);
+
   return (
     <TableContainer component={Paper}>
       <Table>
@@ -15,28 +18,18 @@ export default function RequestsTable({ requests }) {
           <TableRow>
             <TableCell>#</TableCell>
             <TableCell>RequestDate</TableCell>
-            <TableCell>Username</TableCell>
             <TableCell>ExpireDate</TableCell>
             <TableCell>Comment</TableCell>
+            <TableCell>STATUS</TableCell>
           </TableRow>
         </TableHead>
-        <TableBody>
-          {requests.length > 0 &&
-            requests.map(({ id, created_at, user: { username }, expireDate, comment }) => (
-              <TableRow key={id}>
-                <TableCell component="th" scope="row">
-                  <Link href="/requests/[id]" as={`/requests/${id}`}>
-                    <a>{id}</a>
-                  </Link>
-                </TableCell>
-                <TableCell>{created_at}</TableCell>
-                <TableCell>{username}</TableCell>
-                <TableCell>{expireDate}</TableCell>
-                <TableCell>{comment}</TableCell>
-              </TableRow>
-            ))}
-        </TableBody>
+        <RequestsTableBody pageSize={pageSize} pageNum={pageNum} />
+        <div style={{ display: 'none' }}>
+          <RequestsTableBody pageSize={pageSize} pageNum={pageNum + 1} />
+        </div>
       </Table>
+      <button onClick={() => setPageNum(pageNum - 1)}>Previous</button>
+      <button onClick={() => setPageNum(pageNum + 1)}>Next</button>
     </TableContainer>
   );
 }

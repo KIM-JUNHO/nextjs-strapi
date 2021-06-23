@@ -1,13 +1,16 @@
+import { useState } from 'react';
 import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import Link from 'next/link';
+import ApprovalsTableBody from './ApprovalsTableBody';
 
-export default function ApprovalsTable({ approvals }) {
+export default function ApprovalsTable() {
+  const pageSize = 5;
+  const [pageNum, setPageNum] = useState(0);
+
   return (
     <TableContainer component={Paper}>
       <Table>
@@ -16,29 +19,17 @@ export default function ApprovalsTable({ approvals }) {
             <TableCell>#</TableCell>
             <TableCell>Type</TableCell>
             <TableCell>Status</TableCell>
-            <TableCell>User</TableCell>
             <TableCell>Created_At</TableCell>
             <TableCell>Updated_At</TableCell>
           </TableRow>
         </TableHead>
-        <TableBody>
-          {approvals.length > 0 &&
-            approvals.map(({ id, type, status, user: { username }, created_at, updated_at }) => (
-              <TableRow key={id}>
-                <TableCell component="th" scope="row">
-                  <Link href="/approvals/[id]" as={`/approvals/${id}`}>
-                    <a>{id}</a>
-                  </Link>
-                </TableCell>
-                <TableCell>{type}</TableCell>
-                <TableCell>{status}</TableCell>
-                <TableCell>{username}</TableCell>
-                <TableCell>{created_at}</TableCell>
-                <TableCell>{updated_at}</TableCell>
-              </TableRow>
-            ))}
-        </TableBody>
+        <ApprovalsTableBody pageSize={pageSize} pageNum={pageNum} />
+        <div style={{ display: 'none' }}>
+          <ApprovalsTableBody pageSize={pageSize} pageNum={pageNum + 1} />
+        </div>
       </Table>
+      <button onClick={() => setPageNum(pageNum - 1)}>Previous</button>
+      <button onClick={() => setPageNum(pageNum + 1)}>Next</button>
     </TableContainer>
   );
 }

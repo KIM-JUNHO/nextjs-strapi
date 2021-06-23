@@ -9,7 +9,7 @@ import RulesTableBody from './RulesTableBody';
 
 export default function RulesTable() {
   const pageSize = 5;
-  const [pageNum, setPageNum] = useState(1);
+  const [pageNum, setPageNum] = useState(0);
 
   return (
     <TableContainer component={Paper}>

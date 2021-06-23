@@ -2,29 +2,28 @@ import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableRow from '@material-ui/core/TableRow';
 import Link from 'next/link';
-import useRules from '../data/useRules';
+import useApprovals from '../data/useApprovals';
 
-export default function RulesTableBody({ pageSize, pageNum }) {
-  const { rules, loading, error } = useRules({ pageSize, pageNum });
+export default function ApprovalsTableBody({ pageSize, pageNum }) {
+  const { approvals, loading, error } = useApprovals({ pageSize, pageNum });
 
   if (loading) return 'loading...';
   if (error) return 'error...';
 
   return (
     <TableBody>
-      {rules.length > 0 &&
-        rules.map(({ id, srcAddr, dstAddr, dstPort, comment, created_at }) => (
+      {approvals.length > 0 &&
+        approvals.map(({ id, type, status, created_at, updated_at }) => (
           <TableRow key={id}>
             <TableCell component="th" scope="row">
-              <Link href="/rules/[id]" as={`/rules/${id}`}>
+              <Link href="/approvals/[id]" as={`/approvals/${id}`}>
                 <a>{id}</a>
               </Link>
             </TableCell>
-            <TableCell>{srcAddr}</TableCell>
-            <TableCell>{dstAddr}</TableCell>
-            <TableCell>{dstPort}</TableCell>
-            <TableCell>{comment}</TableCell>
+            <TableCell>{type}</TableCell>
+            <TableCell>{status}</TableCell>
             <TableCell>{created_at}</TableCell>
+            <TableCell>{updated_at}</TableCell>
           </TableRow>
         ))}
     </TableBody>
