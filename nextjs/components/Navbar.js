@@ -7,7 +7,6 @@ import { destroyCookie } from 'nookies';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
-import MuiLink from '@material-ui/core/Link';
 
 const Navbar = () => {
   const { user, loading, error } = useUser();
@@ -42,7 +41,7 @@ const Navbar = () => {
         </Typography>
       </Link>
       <Link href="/profile" passHref>
-        <MuiLink style={{ marginRight: 25 }}>{user && user.username}</MuiLink>
+        <a style={{ marginRight: 20 }}>{user && user.username}</a>
       </Link>
       <Button color="inherit" onClick={() => logout()}>
         Logout
