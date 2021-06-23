@@ -42,7 +42,7 @@ const Navbar = () => {
         </Typography>
       </Link>
       <Link href="/profile" passHref>
-        {!loading && !error && <MuiLink style={{ marginRight: 25 }}>{user.username}</MuiLink>}
+        <MuiLink style={{ marginRight: 25 }}>{user && user.username}</MuiLink>
       </Link>
       <Button color="inherit" onClick={() => logout()}>
         Logout
