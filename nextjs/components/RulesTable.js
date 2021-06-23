@@ -6,8 +6,11 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Link from 'next/link';
+import useRules from '../data/useRules';
 
-export default function RulesTable({ rules }) {
+export default function RulesTable({ pageSize, pageNum }) {
+  const { rules, loading, error } = useRules({ pageSize, pageNum });
+
   return (
     <TableContainer component={Paper}>
       <Table>
@@ -22,6 +25,8 @@ export default function RulesTable({ rules }) {
           </TableRow>
         </TableHead>
         <TableBody>
+          {loading && 'loading'}
+          {error && 'error'}
           {rules.length > 0 &&
             rules.map(({ id, srcAddr, dstAddr, dstPort, comment, created_at }) => (
               <TableRow key={id}>

@@ -18,9 +18,6 @@ const Navbar = () => {
     }
   }, [error]);
 
-  if (loading) return 'loading...';
-  if (error) return 'redirecting...';
-
   const logout = () => {
     destroyCookie(null, 'jwt');
     Router.push('/login');
@@ -45,7 +42,7 @@ const Navbar = () => {
         </Typography>
       </Link>
       <Link href="/profile" passHref>
-        <MuiLink style={{ marginRight: 25 }}>{user.username}</MuiLink>
+        {!loading && !error && <MuiLink style={{ marginRight: 25 }}>{user.username}</MuiLink>}
       </Link>
       <Button color="inherit" onClick={() => logout()}>
         Logout

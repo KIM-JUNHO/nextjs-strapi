@@ -1,16 +1,16 @@
+import { useState } from 'react';
 import Layout from '../../components/Layout';
 import RulesTable from '../../components/RulesTable';
 import useRules from '../../data/useRules';
 
 function RulesPage() {
-  const { rules, loading, error } = useRules();
-
-  if (loading) return 'loading...';
-  if (error) return 'error...';
-
+  const pageSize = 5;
+  const [pageNum, setPageNum] = useState(1);
   return (
     <Layout>
-      <RulesTable rules={rules} />
+      <RulesTable pageSize={pageSize} pageNum={pageNum} />
+      <button onClick={() => setPageNum(pageNum - 1)}>Previous</button>
+      <button onClick={() => setPageNum(pageNum + 1)}>Next</button>
     </Layout>
   );
 }
