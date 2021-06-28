@@ -6,5 +6,8 @@
     "nextjs": "yarn --cwd nextjs",
     "strapi": "yarn --cwd strapi"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@ant-design/icons": "^4.6.2"
+  }
 }
