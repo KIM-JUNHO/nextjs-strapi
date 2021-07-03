@@ -1,17 +1,45 @@
 export default async (req, res) => {
   const nodemailer = require('nodemailer');
+
+  var Mailgen = require('mailgen');
+  // Configure mailgen by setting a theme and your product info
+  var mailGenerator = new Mailgen({
+    theme: 'default',
+    product: {
+      // Appears in header & footer of e-mails
+      name: 'Mailgen',
+      link: 'https://mailgen.js/',
+      // Optional product logo
+      // logo: 'https://mailgen.js/img/logo.png'
+    },
+  });
+
+  var email = {
+    body: {
+      name: 'John Appleseed',
+      intro: "Welcome to Mailgen! We're very excited to have you on board.",
+      action: {
+        instructions: 'To get started with Mailgen, please click here:',
+        button: {
+          color: '#22BC66', // Optional action button color
+          text: 'Confirm your account',
+          link: 'https://mailgen.js/confirm?s=d9729feb74992cc3482b350163a1a010',
+        },
+      },
+      outro: "Need help, or have questions? Just reply to this email, we'd love to help.",
+    },
+  };
+
+  // Generate an HTML email with the provided contents
+  var emailBody = mailGenerator.generate(email);
+
   let transporter = nodemailer.createTransport({
     service: 'gmail',
     host: 'smtp.gmail.com',
     port: 465,
-    secure: true,
     auth: {
       user: 'jh3618.kim@gmail.com',
       pass: 'l4s83265!',
-    },
-    tls: {
-      // do not fail on invalid certs
-      rejectUnauthorized: false,
     },
   });
 
@@ -30,7 +58,7 @@ export default async (req, res) => {
     to: req.body.email, // list of receivers
     subject: `Message From ${req.body.name}`, // Subject line
     text: req.body.message + ' | Sent from: ' + req.body.email, // plain text body
-    html: `<b>${req.body.message}</div><p>Sent from:${req.body.email}</b>`, // html body
+    html: emailBody,
   });
 
   console.log('Message sent: %s', info.messageId);
