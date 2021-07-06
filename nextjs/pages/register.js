@@ -1,11 +1,23 @@
-import RegisterForm from '../components/RegisterFrom';
+import styled from '@emotion/styled';
+import { Card } from 'antd';
+import RegisterForm from '../components/form/RegisterFrom';
 
-function RegisterPage() {
+export default function RegisterPage() {
   return (
     <>
-      <RegisterForm />
+      <CardStyled title={<TitleStyled>REGISTER</TitleStyled>}>
+        <RegisterForm />
+      </CardStyled>
     </>
   );
 }
 
-export default RegisterPage;
+const TitleStyled = styled.div`
+  font-size: 24px;
+  font-weight: 500;
+`;
+
+const CardStyled = styled(Card)`
+  padding: 30px;
+  margin: 30px;
+`;

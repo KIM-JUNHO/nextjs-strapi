@@ -1,17 +1,28 @@
-import Layout from '../../components/Layout';
-import RequestsTable from '../../components/RequestsTable';
-import Link from 'next/link';
-import Button from '@material-ui/core/Button';
+import { useState } from 'react';
+import Layout from '../../components/layout/Layout';
+import { createRequest } from '../../api/requestApi';
 
-function RequestsPage() {
+export default function RequestPage() {
+  const [srcAddr, setSrcAddr] = useState('');
+  const [dstAddr, setDstAddr] = useState('');
+  const [dstPort, setDstPort] = useState('');
+  const [comment, setComment] = useState('');
+
+  const onRequestSubmit = async (e) => {
+    e.preventDefault();
+    const rule = { srcAddr, dstAddr, dstPort, comment };
+    const res = await createRequest({ rule });
+  };
+
   return (
     <Layout>
-      <RequestsTable />
-      <Link href="/requests/create" passHref>
-        <Button style={{ float: 'right' }}>Create</Button>
-      </Link>
+      <form onSubmit={onRequestSubmit}>
+        <input type="text" onChange={(e) => setSrcAddr(e.target.value)} value={srcAddr} />
+        <input type="text" onChange={(e) => setDstAddr(e.target.value)} value={dstAddr} />
+        <input type="text" onChange={(e) => setDstPort(e.target.value)} value={dstPort} />
+        <input type="text" onChange={(e) => setComment(e.target.value)} value={comment} />
+        <button type="submit">Submit</button>
+      </form>
     </Layout>
   );
 }
-
-export default RequestsPage;

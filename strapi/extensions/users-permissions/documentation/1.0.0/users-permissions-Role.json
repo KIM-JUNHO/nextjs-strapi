@@ -561,6 +561,21 @@
                 "role": {
                   "type": "string"
                 },
+                "name": {
+                  "type": "string"
+                },
+                "approvals": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "requests": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
                 "created_by": {
                   "type": "string"
                 },

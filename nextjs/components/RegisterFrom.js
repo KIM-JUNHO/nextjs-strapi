@@ -17,7 +17,7 @@ const validationSchema = yup.object({
 });
 
 const RegisterForm = () => {
-  const { mutateUser } = useUser();
+  const { mutate } = useUser();
   const formik = useFormik({
     initialValues: {
       username: '',
@@ -32,7 +32,7 @@ const RegisterForm = () => {
         maxAge: 30 * 24 * 60 * 60,
         path: '/',
       });
-      await mutateUser();
+      await mutate();
       Router.push('/');
     },
   });

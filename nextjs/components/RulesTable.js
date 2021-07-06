@@ -12,7 +12,7 @@ import Link from 'next/link';
 export default function RulesTable() {
   const pageSize = 5;
   const [pageNum, setPageNum] = useState(0);
-  const { rules, loading, error } = useRules({ pageSize, pageNum });
+  const { data, loading, error } = useRules({ pageSize, pageNum });
   const {} = useRules({ pageSize, pageNum: pageNum + 1 });
 
   if (loading) return 'loading...';
@@ -32,13 +32,11 @@ export default function RulesTable() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {rules.length > 0 &&
-            rules.map(({ id, srcAddr, dstAddr, dstPort, comment, created_at }) => (
+          {data.length > 0 &&
+            data.map(({ id, srcAddr, dstAddr, dstPort, comment, created_at }) => (
               <TableRow key={id}>
                 <TableCell component="th" scope="row">
-                  <Link href="/rules/[id]" as={`/rules/${id}`}>
-                    <a>{id}</a>
-                  </Link>
+                  {id}
                 </TableCell>
                 <TableCell>{srcAddr}</TableCell>
                 <TableCell>{dstAddr}</TableCell>

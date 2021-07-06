@@ -12,7 +12,7 @@ import Link from 'next/link';
 export default function ApprovalsTable() {
   const pageSize = 5;
   const [pageNum, setPageNum] = useState(0);
-  const { approvals, loading, error } = useApprovals({ pageSize, pageNum });
+  const { data, loading, error } = useApprovals({ pageSize, pageNum });
   const {} = useApprovals({ pageSize, pageNum: pageNum + 1 });
 
   if (loading) return <div>loading...</div>;
@@ -31,8 +31,8 @@ export default function ApprovalsTable() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {approvals.length > 0 &&
-            approvals.map(({ id, type, status, created_at, updated_at }) => (
+          {data.length > 0 &&
+            data.map(({ id, type, status, created_at, updated_at }) => (
               <TableRow key={id}>
                 <TableCell component="th" scope="row">
                   <Link href="/approvals/[id]" as={`/approvals/${id}`}>

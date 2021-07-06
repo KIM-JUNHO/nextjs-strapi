@@ -1,18 +1,23 @@
-import Link from 'next/link';
-import Button from '@material-ui/core/Button';
-import LoginForm from '../components/LoginForm';
+import styled from '@emotion/styled';
+import { Card } from 'antd';
+import LoginForm from '../components/form/LoginForm';
 
-function LoginPage() {
+export default function LoginPage() {
   return (
     <>
-      <LoginForm />
-      <Link href="/register" passHref>
-        <Button color="primary" fullWidth>
-          Register
-        </Button>
-      </Link>
+      <CardStyled title={<TitleStyled>LOGIN</TitleStyled>}>
+        <LoginForm />
+      </CardStyled>
     </>
   );
 }
 
-export default LoginPage;
+const TitleStyled = styled.div`
+  font-size: 24px;
+  font-weight: 500;
+`;
+
+const CardStyled = styled(Card)`
+  padding: 30px;
+  margin: 30px;
+`;

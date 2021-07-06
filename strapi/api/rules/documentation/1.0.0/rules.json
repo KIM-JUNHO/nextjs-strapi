@@ -533,6 +533,55 @@
           },
           "comment": {
             "type": "string"
+          },
+          "request": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "expireDate": {
+                "type": "string"
+              },
+              "comment": {
+                "type": "string"
+              },
+              "status": {
+                "type": "string"
+              },
+              "user": {
+                "type": "string"
+              },
+              "approvals": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "rules": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "title": {
+                "type": "string"
+              },
+              "submissionDate": {
+                "type": "string"
+              },
+              "username": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
           }
         }
       },
@@ -548,6 +597,9 @@
             "type": "string"
           },
           "comment": {
+            "type": "string"
+          },
+          "request": {
             "type": "string"
           },
           "created_by": {

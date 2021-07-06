@@ -1,11 +1,10 @@
-import Layout from '../components/Layout';
+import Layout from '../components/layout/Layout';
 import useUser from '../data/useUser';
-import User from '../components/User';
 
 function ProfilePage() {
-  const { user } = useUser();
+  const { data } = useUser();
 
-  return <Layout>{user && <User user={user} />}</Layout>;
+  return <Layout>{data && JSON.stringify(data)}</Layout>;
 }
 
 export default ProfilePage;

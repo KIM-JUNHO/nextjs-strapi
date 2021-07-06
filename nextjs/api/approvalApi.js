@@ -14,25 +14,3 @@ export async function createApproval({ approval }) {
   const res = await req.json();
   return res;
 }
-
-export async function countApprovals() {
-  const req = await fetch(`http://localhost:1337/approvals/count`, {
-    method: 'GET',
-    headers: {
-      Accept: 'application/json',
-    },
-  });
-  const res = await req.json();
-  return res;
-}
-
-export async function getApproval({ id }) {
-  const req = await fetch(`http://localhost:1337/approvals/${id}`, {
-    method: 'GET',
-    headers: {
-      Accept: 'application/json',
-    },
-  });
-  const res = await req.json();
-  return res;
-}

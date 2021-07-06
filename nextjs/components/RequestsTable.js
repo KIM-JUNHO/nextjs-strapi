@@ -12,7 +12,7 @@ import Link from 'next/link';
 export default function RequestsTable() {
   const pageSize = 5;
   const [pageNum, setPageNum] = useState(0);
-  const { requests, loading, error } = useRequests({ pageSize, pageNum });
+  const { data, loading, error } = useRequests({ pageSize, pageNum });
   const {} = useRequests({ pageSize, pageNum: pageNum + 1 });
 
   if (loading) return 'loading...';
@@ -31,8 +31,8 @@ export default function RequestsTable() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {requests.length > 0 &&
-            requests.map(({ id, created_at, expireDate, comment, status }) => (
+          {data.length > 0 &&
+            data.map(({ id, created_at, expireDate, comment, status }) => (
               <TableRow key={id}>
                 <TableCell component="th" scope="row">
                   <Link href="/requests/[id]" as={`/requests/${id}`}>

@@ -2,7 +2,8 @@
   "kind": "collectionType",
   "collectionName": "approvals",
   "info": {
-    "name": "Approvals"
+    "name": "Approvals",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -16,6 +17,24 @@
     },
     "status": {
       "type": "string"
+    },
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "approvals"
+    },
+    "request": {
+      "via": "approvals",
+      "model": "requests"
+    },
+    "username": {
+      "type": "string"
+    },
+    "approvalDate": {
+      "type": "datetime"
+    },
+    "order": {
+      "type": "integer"
     }
   }
 }

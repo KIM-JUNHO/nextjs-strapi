@@ -2,7 +2,8 @@
   "kind": "collectionType",
   "collectionName": "requests",
   "info": {
-    "name": "Requests"
+    "name": "Requests",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -18,6 +19,28 @@
       "type": "string"
     },
     "status": {
+      "type": "string"
+    },
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "requests"
+    },
+    "approvals": {
+      "via": "request",
+      "collection": "approvals"
+    },
+    "rules": {
+      "via": "request",
+      "collection": "rules"
+    },
+    "title": {
+      "type": "string"
+    },
+    "submissionDate": {
+      "type": "datetime"
+    },
+    "username": {
       "type": "string"
     }
   }
