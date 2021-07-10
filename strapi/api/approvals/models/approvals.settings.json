@@ -35,6 +35,14 @@
     },
     "order": {
       "type": "integer"
+    },
+    "next": {
+      "model": "approvals",
+      "via": "prev"
+    },
+    "prev": {
+      "model": "approvals",
+      "via": "next"
     }
   }
 }

@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "07/10/2021 2:28:11 AM"
+    "x-generation-date": "07/11/2021 2:46:45 AM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -3939,6 +3939,92 @@
           },
           "order": {
             "type": "integer"
+          },
+          "next": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string"
+              },
+              "status": {
+                "type": "string"
+              },
+              "user": {
+                "type": "string"
+              },
+              "request": {
+                "type": "string"
+              },
+              "username": {
+                "type": "string"
+              },
+              "approvalDate": {
+                "type": "string"
+              },
+              "order": {
+                "type": "integer"
+              },
+              "next": {
+                "type": "string"
+              },
+              "prev": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "prev": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string"
+              },
+              "status": {
+                "type": "string"
+              },
+              "user": {
+                "type": "string"
+              },
+              "request": {
+                "type": "string"
+              },
+              "username": {
+                "type": "string"
+              },
+              "approvalDate": {
+                "type": "string"
+              },
+              "order": {
+                "type": "integer"
+              },
+              "next": {
+                "type": "string"
+              },
+              "prev": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
           }
         }
       },
@@ -3965,6 +4051,12 @@
           },
           "order": {
             "type": "integer"
+          },
+          "next": {
+            "type": "string"
+          },
+          "prev": {
+            "type": "string"
           },
           "created_by": {
             "type": "string"
@@ -4082,6 +4174,12 @@
                 },
                 "order": {
                   "type": "integer"
+                },
+                "next": {
+                  "type": "string"
+                },
+                "prev": {
+                  "type": "string"
                 },
                 "created_by": {
                   "type": "string"
@@ -4548,6 +4646,12 @@
                 },
                 "order": {
                   "type": "integer"
+                },
+                "next": {
+                  "type": "string"
+                },
+                "prev": {
+                  "type": "string"
                 },
                 "created_by": {
                   "type": "string"

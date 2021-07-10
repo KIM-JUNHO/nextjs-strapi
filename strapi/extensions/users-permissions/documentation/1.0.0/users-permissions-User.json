@@ -1285,6 +1285,12 @@
                 "order": {
                   "type": "integer"
                 },
+                "next": {
+                  "type": "string"
+                },
+                "prev": {
+                  "type": "string"
+                },
                 "created_by": {
                   "type": "string"
                 },
