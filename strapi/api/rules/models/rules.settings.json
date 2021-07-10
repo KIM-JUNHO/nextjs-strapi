@@ -27,6 +27,9 @@
     "request": {
       "via": "rules",
       "model": "requests"
+    },
+    "protocol": {
+      "type": "string"
     }
   }
 }
