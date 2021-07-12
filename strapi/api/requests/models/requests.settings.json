@@ -42,6 +42,9 @@
     },
     "username": {
       "type": "string"
+    },
+    "rawData": {
+      "type": "json"
     }
   }
 }

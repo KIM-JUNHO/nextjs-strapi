@@ -43,6 +43,9 @@
     "prev": {
       "model": "approvals",
       "via": "next"
+    },
+    "email": {
+      "type": "email"
     }
   }
 }

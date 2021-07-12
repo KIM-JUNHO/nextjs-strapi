@@ -575,6 +575,9 @@
               "username": {
                 "type": "string"
               },
+              "rawData": {
+                "type": "object"
+              },
               "created_by": {
                 "type": "string"
               },
@@ -584,6 +587,18 @@
             }
           },
           "protocol": {
+            "type": "string"
+          },
+          "srcAddrType": {
+            "type": "string"
+          },
+          "dstAddrType": {
+            "type": "string"
+          },
+          "serviceType": {
+            "type": "string"
+          },
+          "serviceValue": {
             "type": "string"
           }
         }
@@ -606,6 +621,18 @@
             "type": "string"
           },
           "protocol": {
+            "type": "string"
+          },
+          "srcAddrType": {
+            "type": "string"
+          },
+          "dstAddrType": {
+            "type": "string"
+          },
+          "serviceType": {
+            "type": "string"
+          },
+          "serviceValue": {
             "type": "string"
           },
           "created_by": {

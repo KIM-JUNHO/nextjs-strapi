@@ -629,6 +629,9 @@
               "username": {
                 "type": "string"
               },
+              "rawData": {
+                "type": "object"
+              },
               "created_by": {
                 "type": "string"
               },
@@ -682,6 +685,9 @@
               "prev": {
                 "type": "string"
               },
+              "email": {
+                "type": "string"
+              },
               "created_by": {
                 "type": "string"
               },
@@ -725,6 +731,9 @@
               "prev": {
                 "type": "string"
               },
+              "email": {
+                "type": "string"
+              },
               "created_by": {
                 "type": "string"
               },
@@ -732,6 +741,9 @@
                 "type": "string"
               }
             }
+          },
+          "email": {
+            "type": "string"
           }
         }
       },
@@ -763,6 +775,9 @@
             "type": "string"
           },
           "prev": {
+            "type": "string"
+          },
+          "email": {
             "type": "string"
           },
           "created_by": {

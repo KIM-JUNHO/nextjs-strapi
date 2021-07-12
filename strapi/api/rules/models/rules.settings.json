@@ -30,6 +30,18 @@
     },
     "protocol": {
       "type": "string"
+    },
+    "srcAddrType": {
+      "type": "string"
+    },
+    "dstAddrType": {
+      "type": "string"
+    },
+    "serviceType": {
+      "type": "string"
+    },
+    "serviceValue": {
+      "type": "string"
     }
   }
 }

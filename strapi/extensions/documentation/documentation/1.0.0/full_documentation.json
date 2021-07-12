@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "07/11/2021 2:46:45 AM"
+    "x-generation-date": "07/12/2021 6:18:52 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -3922,6 +3922,9 @@
               "username": {
                 "type": "string"
               },
+              "rawData": {
+                "type": "object"
+              },
               "created_by": {
                 "type": "string"
               },
@@ -3975,6 +3978,9 @@
               "prev": {
                 "type": "string"
               },
+              "email": {
+                "type": "string"
+              },
               "created_by": {
                 "type": "string"
               },
@@ -4018,6 +4024,9 @@
               "prev": {
                 "type": "string"
               },
+              "email": {
+                "type": "string"
+              },
               "created_by": {
                 "type": "string"
               },
@@ -4025,6 +4034,9 @@
                 "type": "string"
               }
             }
+          },
+          "email": {
+            "type": "string"
           }
         }
       },
@@ -4056,6 +4068,9 @@
             "type": "string"
           },
           "prev": {
+            "type": "string"
+          },
+          "email": {
             "type": "string"
           },
           "created_by": {
@@ -4181,6 +4196,9 @@
                 "prev": {
                   "type": "string"
                 },
+                "email": {
+                  "type": "string"
+                },
                 "created_by": {
                   "type": "string"
                 },
@@ -4218,6 +4236,18 @@
                 "protocol": {
                   "type": "string"
                 },
+                "srcAddrType": {
+                  "type": "string"
+                },
+                "dstAddrType": {
+                  "type": "string"
+                },
+                "serviceType": {
+                  "type": "string"
+                },
+                "serviceValue": {
+                  "type": "string"
+                },
                 "created_by": {
                   "type": "string"
                 },
@@ -4236,6 +4266,9 @@
           },
           "username": {
             "type": "string"
+          },
+          "rawData": {
+            "type": "object"
           }
         }
       },
@@ -4275,6 +4308,9 @@
           },
           "username": {
             "type": "string"
+          },
+          "rawData": {
+            "type": "object"
           },
           "created_by": {
             "type": "string"
@@ -4345,6 +4381,9 @@
               "username": {
                 "type": "string"
               },
+              "rawData": {
+                "type": "object"
+              },
               "created_by": {
                 "type": "string"
               },
@@ -4354,6 +4393,18 @@
             }
           },
           "protocol": {
+            "type": "string"
+          },
+          "srcAddrType": {
+            "type": "string"
+          },
+          "dstAddrType": {
+            "type": "string"
+          },
+          "serviceType": {
+            "type": "string"
+          },
+          "serviceValue": {
             "type": "string"
           }
         }
@@ -4376,6 +4427,18 @@
             "type": "string"
           },
           "protocol": {
+            "type": "string"
+          },
+          "srcAddrType": {
+            "type": "string"
+          },
+          "dstAddrType": {
+            "type": "string"
+          },
+          "serviceType": {
+            "type": "string"
+          },
+          "serviceValue": {
             "type": "string"
           },
           "created_by": {
@@ -4653,6 +4716,9 @@
                 "prev": {
                   "type": "string"
                 },
+                "email": {
+                  "type": "string"
+                },
                 "created_by": {
                   "type": "string"
                 },
@@ -4704,6 +4770,9 @@
                 },
                 "username": {
                   "type": "string"
+                },
+                "rawData": {
+                  "type": "object"
                 },
                 "created_by": {
                   "type": "string"
