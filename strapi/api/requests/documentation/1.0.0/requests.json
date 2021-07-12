@@ -702,6 +702,9 @@
           },
           "rawData": {
             "type": "object"
+          },
+          "emails": {
+            "type": "object"
           }
         }
       },
@@ -743,6 +746,9 @@
             "type": "string"
           },
           "rawData": {
+            "type": "object"
+          },
+          "emails": {
             "type": "object"
           },
           "created_by": {

@@ -1349,6 +1349,9 @@
                 "rawData": {
                   "type": "object"
                 },
+                "emails": {
+                  "type": "object"
+                },
                 "created_by": {
                   "type": "string"
                 },

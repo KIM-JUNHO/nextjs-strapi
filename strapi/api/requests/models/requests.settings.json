@@ -45,6 +45,9 @@
     },
     "rawData": {
       "type": "json"
+    },
+    "emails": {
+      "type": "json"
     }
   }
 }
