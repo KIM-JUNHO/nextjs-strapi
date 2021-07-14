@@ -545,9 +545,6 @@
               "expireDate": {
                 "type": "string"
               },
-              "comment": {
-                "type": "string"
-              },
               "status": {
                 "type": "string"
               },
@@ -581,6 +578,12 @@
               "emails": {
                 "type": "object"
               },
+              "startDate": {
+                "type": "string"
+              },
+              "requestId": {
+                "type": "string"
+              },
               "created_by": {
                 "type": "string"
               },
@@ -603,6 +606,21 @@
           },
           "serviceValue": {
             "type": "string"
+          },
+          "serviceMember": {
+            "type": "object"
+          },
+          "addressMember": {
+            "type": "object"
+          },
+          "srcAddrMember": {
+            "type": "object"
+          },
+          "dstAddrMember": {
+            "type": "object"
+          },
+          "compliance": {
+            "type": "object"
           }
         }
       },
@@ -637,6 +655,21 @@
           },
           "serviceValue": {
             "type": "string"
+          },
+          "serviceMember": {
+            "type": "object"
+          },
+          "addressMember": {
+            "type": "object"
+          },
+          "srcAddrMember": {
+            "type": "object"
+          },
+          "dstAddrMember": {
+            "type": "object"
+          },
+          "compliance": {
+            "type": "object"
           },
           "created_by": {
             "type": "string"

@@ -1316,9 +1316,6 @@
                 "expireDate": {
                   "type": "string"
                 },
-                "comment": {
-                  "type": "string"
-                },
                 "status": {
                   "type": "string"
                 },
@@ -1351,6 +1348,12 @@
                 },
                 "emails": {
                   "type": "object"
+                },
+                "startDate": {
+                  "type": "string"
+                },
+                "requestId": {
+                  "type": "string"
                 },
                 "created_by": {
                   "type": "string"

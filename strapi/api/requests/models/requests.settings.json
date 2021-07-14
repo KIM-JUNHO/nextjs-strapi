@@ -15,9 +15,6 @@
     "expireDate": {
       "type": "date"
     },
-    "comment": {
-      "type": "string"
-    },
     "status": {
       "type": "string"
     },
@@ -48,6 +45,12 @@
     },
     "emails": {
       "type": "json"
+    },
+    "startDate": {
+      "type": "date"
+    },
+    "requestId": {
+      "type": "string"
     }
   }
 }

@@ -42,6 +42,21 @@
     },
     "serviceValue": {
       "type": "string"
+    },
+    "serviceMember": {
+      "type": "json"
+    },
+    "addressMember": {
+      "type": "json"
+    },
+    "srcAddrMember": {
+      "type": "json"
+    },
+    "dstAddrMember": {
+      "type": "json"
+    },
+    "compliance": {
+      "type": "json"
     }
   }
 }

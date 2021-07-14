@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "07/13/2021 12:16:03 AM"
+    "x-generation-date": "07/14/2021 2:11:46 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -3892,9 +3892,6 @@
               "expireDate": {
                 "type": "string"
               },
-              "comment": {
-                "type": "string"
-              },
               "status": {
                 "type": "string"
               },
@@ -3927,6 +3924,12 @@
               },
               "emails": {
                 "type": "object"
+              },
+              "startDate": {
+                "type": "string"
+              },
+              "requestId": {
+                "type": "string"
               },
               "created_by": {
                 "type": "string"
@@ -4096,9 +4099,6 @@
             "type": "string",
             "format": "date"
           },
-          "comment": {
-            "type": "string"
-          },
           "status": {
             "type": "string"
           },
@@ -4251,6 +4251,21 @@
                 "serviceValue": {
                   "type": "string"
                 },
+                "serviceMember": {
+                  "type": "object"
+                },
+                "addressMember": {
+                  "type": "object"
+                },
+                "srcAddrMember": {
+                  "type": "object"
+                },
+                "dstAddrMember": {
+                  "type": "object"
+                },
+                "compliance": {
+                  "type": "object"
+                },
                 "created_by": {
                   "type": "string"
                 },
@@ -4275,6 +4290,13 @@
           },
           "emails": {
             "type": "object"
+          },
+          "startDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "requestId": {
+            "type": "string"
           }
         }
       },
@@ -4283,9 +4305,6 @@
           "expireDate": {
             "type": "string",
             "format": "date"
-          },
-          "comment": {
-            "type": "string"
           },
           "status": {
             "type": "string"
@@ -4320,6 +4339,13 @@
           },
           "emails": {
             "type": "object"
+          },
+          "startDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "requestId": {
+            "type": "string"
           },
           "created_by": {
             "type": "string"
@@ -4360,9 +4386,6 @@
               "expireDate": {
                 "type": "string"
               },
-              "comment": {
-                "type": "string"
-              },
               "status": {
                 "type": "string"
               },
@@ -4396,6 +4419,12 @@
               "emails": {
                 "type": "object"
               },
+              "startDate": {
+                "type": "string"
+              },
+              "requestId": {
+                "type": "string"
+              },
               "created_by": {
                 "type": "string"
               },
@@ -4418,6 +4447,21 @@
           },
           "serviceValue": {
             "type": "string"
+          },
+          "serviceMember": {
+            "type": "object"
+          },
+          "addressMember": {
+            "type": "object"
+          },
+          "srcAddrMember": {
+            "type": "object"
+          },
+          "dstAddrMember": {
+            "type": "object"
+          },
+          "compliance": {
+            "type": "object"
           }
         }
       },
@@ -4452,6 +4496,21 @@
           },
           "serviceValue": {
             "type": "string"
+          },
+          "serviceMember": {
+            "type": "object"
+          },
+          "addressMember": {
+            "type": "object"
+          },
+          "srcAddrMember": {
+            "type": "object"
+          },
+          "dstAddrMember": {
+            "type": "object"
+          },
+          "compliance": {
+            "type": "object"
           },
           "created_by": {
             "type": "string"
@@ -4753,9 +4812,6 @@
                 "expireDate": {
                   "type": "string"
                 },
-                "comment": {
-                  "type": "string"
-                },
                 "status": {
                   "type": "string"
                 },
@@ -4788,6 +4844,12 @@
                 },
                 "emails": {
                   "type": "object"
+                },
+                "startDate": {
+                  "type": "string"
+                },
+                "requestId": {
+                  "type": "string"
                 },
                 "created_by": {
                   "type": "string"
