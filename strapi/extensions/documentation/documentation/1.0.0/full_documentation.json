@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "07/14/2021 2:11:46 PM"
+    "x-generation-date": "07/14/2021 4:17:16 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -4254,9 +4254,6 @@
                 "serviceMember": {
                   "type": "object"
                 },
-                "addressMember": {
-                  "type": "object"
-                },
                 "srcAddrMember": {
                   "type": "object"
                 },
@@ -4451,9 +4448,6 @@
           "serviceMember": {
             "type": "object"
           },
-          "addressMember": {
-            "type": "object"
-          },
           "srcAddrMember": {
             "type": "object"
           },
@@ -4498,9 +4492,6 @@
             "type": "string"
           },
           "serviceMember": {
-            "type": "object"
-          },
-          "addressMember": {
             "type": "object"
           },
           "srcAddrMember": {

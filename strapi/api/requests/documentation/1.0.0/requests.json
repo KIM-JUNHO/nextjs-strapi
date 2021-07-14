@@ -681,9 +681,6 @@
                 "serviceMember": {
                   "type": "object"
                 },
-                "addressMember": {
-                  "type": "object"
-                },
                 "srcAddrMember": {
                   "type": "object"
                 },

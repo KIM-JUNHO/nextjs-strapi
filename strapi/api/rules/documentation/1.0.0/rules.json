@@ -610,9 +610,6 @@
           "serviceMember": {
             "type": "object"
           },
-          "addressMember": {
-            "type": "object"
-          },
           "srcAddrMember": {
             "type": "object"
           },
@@ -657,9 +654,6 @@
             "type": "string"
           },
           "serviceMember": {
-            "type": "object"
-          },
-          "addressMember": {
             "type": "object"
           },
           "srcAddrMember": {
