@@ -54,6 +54,9 @@
     },
     "compliance": {
       "type": "json"
+    },
+    "firewallPath": {
+      "type": "json"
     }
   }
 }

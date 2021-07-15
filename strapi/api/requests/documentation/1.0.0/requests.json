@@ -690,6 +690,9 @@
                 "compliance": {
                   "type": "object"
                 },
+                "firewallPath": {
+                  "type": "object"
+                },
                 "created_by": {
                   "type": "string"
                 },
@@ -720,6 +723,9 @@
             "format": "date"
           },
           "requestId": {
+            "type": "string"
+          },
+          "name": {
             "type": "string"
           }
         }
@@ -769,6 +775,9 @@
             "format": "date"
           },
           "requestId": {
+            "type": "string"
+          },
+          "name": {
             "type": "string"
           },
           "created_by": {

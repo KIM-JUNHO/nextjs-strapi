@@ -1355,6 +1355,9 @@
                 "requestId": {
                   "type": "string"
                 },
+                "name": {
+                  "type": "string"
+                },
                 "created_by": {
                   "type": "string"
                 },

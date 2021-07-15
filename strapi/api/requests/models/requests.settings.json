@@ -51,6 +51,9 @@
     },
     "requestId": {
       "type": "string"
+    },
+    "name": {
+      "type": "string"
     }
   }
 }
